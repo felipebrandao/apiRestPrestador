@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TB_ESPECIALIDADE")
+@Table(name = "TB_ESPECIALIDADE")
 public class Especialidade implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -17,9 +17,9 @@ public class Especialidade implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
+
 	private String nome_especialidade;
-	
+
 	public long getId() {
 		return id;
 	}

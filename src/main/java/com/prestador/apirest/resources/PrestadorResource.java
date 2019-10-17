@@ -60,4 +60,11 @@ public class PrestadorResource {
 		return prestadorRepository.save(prestador);
 	}
 	
+	@GetMapping("/listaPrestadorMaisProximos")
+	@ApiOperation(value="Retorna uma lista de prestador")
+	public List<Prestador> listaPrestadores(@PathVariable(value="id") int id){
+				
+		return prestadorRepository.findAll();
+	}
+	
 }

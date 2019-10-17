@@ -1,11 +1,15 @@
 package com.prestador.apirest.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +29,14 @@ public class Prestador implements Serializable {
 	private Double latitude;
 	
 	private Double longitude;
+	
+	 @ManyToMany
+	    @JoinTable(
+	        name = "TB_PRESTADOR_ESPECIALIDADE",
+	        joinColumns = @JoinColumn(name = "id_prestador"),
+	        inverseJoinColumns = @JoinColumn(name = "id_especialidade")
+	    )
+    private List<Especialidade> especialidades;
 
 	public long getId() {
 		return id;
@@ -64,6 +76,14 @@ public class Prestador implements Serializable {
 
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
+	}
+
+	public List<Especialidade> getEspecialidades() {
+		return especialidades;
+	}
+
+	public void setEspecialidades(List<Especialidade> especialidades) {
+		this.especialidades = especialidades;
 	}
 	
 }

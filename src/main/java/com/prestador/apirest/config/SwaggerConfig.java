@@ -1,13 +1,11 @@
 package com.prestador.apirest.config;
 
-import static springfox.documentation.builders.PathSelectors.regex;
-
 import java.util.ArrayList;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.RestController;
 
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -20,15 +18,27 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 	
-	@Bean
-    public Docket productApi() {
+    @Bean
+    public Docket apiPrestador() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("prestador")
+                .apiInfo(metaInfo())
                 .select()
-                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-                .paths(regex("/.*"))
-                .build()
-                .apiInfo(metaInfo());
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.regex("/prestador/.*"))
+                .build();
     }
+
+    @Bean
+    public Docket apiEspecialidade() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("especialidade")
+                .apiInfo(metaInfo())
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.regex("/especialidade/.*"))
+                .build();
+    }    
 
     private ApiInfo metaInfo() {
 
