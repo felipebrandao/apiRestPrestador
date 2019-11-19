@@ -1,4 +1,4 @@
-package com.prestador.apirest.model;
+package com.prestador.apirest.entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -30,12 +30,10 @@ public class Prestador implements Serializable {
 	
 	private Double longitude;
 	
-	 @ManyToMany
-	    @JoinTable(
-	        name = "TB_PRESTADOR_ESPECIALIDADE",
-	        joinColumns = @JoinColumn(name = "id_prestador"),
-	        inverseJoinColumns = @JoinColumn(name = "id_especialidade")
-	    )
+    @ManyToMany
+    @JoinTable(name = "TB_PRESTADOR_ESPECIALIDADE",
+            joinColumns = @JoinColumn(name = "prestador_id"),
+            inverseJoinColumns = @JoinColumn(name = "especialidade_id"))
     private List<Especialidade> especialidades;
 
 	public long getId() {

@@ -1,4 +1,4 @@
-package com.prestador.apirest.resources;
+package com.prestador.apirest.controller;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.prestador.apirest.model.Prestador;
+import com.prestador.apirest.entity.Prestador;
 import com.prestador.apirest.repository.PrestadorRepository;
 
 import io.swagger.annotations.Api;
@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping(value = "/prestador")
 @Api(value="API REST Prestador")
 @CrossOrigin(origins="*")
-public class PrestadorResource {
+public class PrestadorController {
 
 	@Autowired
 	PrestadorRepository prestadorRepository;

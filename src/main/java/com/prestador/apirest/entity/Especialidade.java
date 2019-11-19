@@ -1,4 +1,4 @@
-package com.prestador.apirest.model;
+package com.prestador.apirest.entity;
 
 import java.io.Serializable;
 
