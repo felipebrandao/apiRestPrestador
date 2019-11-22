@@ -20,6 +20,11 @@ public class Especialidade implements Serializable {
 
 	private String nome_especialidade;
 
+	public Especialidade(long id, String nome_especialidade) {
+		this.id = id;
+		this.nome_especialidade = nome_especialidade;
+	}
+
 	public long getId() {
 		return id;
 	}

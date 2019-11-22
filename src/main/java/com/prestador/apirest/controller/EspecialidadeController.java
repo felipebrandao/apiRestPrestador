@@ -42,8 +42,8 @@ public class EspecialidadeController {
 
 	@PostMapping("/salvaEspecialidade")
 	@ApiOperation(value = "Salva um especialidade")
-	public EspecialidadeDTO salvaProduto(@RequestBody EspecialidadeDTO especialidade) {
-		return especialidadeService.salvar(especialidade);
+	public void salvaProduto(@RequestBody EspecialidadeDTO especialidade) {
+		especialidadeService.salvar(especialidade);
 	}
 
 	@DeleteMapping("/deleteEspecialidade")
@@ -54,8 +54,8 @@ public class EspecialidadeController {
 
 	@PutMapping("/atualizaEspecialidade")
 	@ApiOperation(value = "Atualiza um prestador")
-	public EspecialidadeDTO atualizaProduto(@RequestBody EspecialidadeDTO especialidade) {
-		return especialidadeService.salvar(especialidade);
+	public void atualizaProduto(@RequestBody EspecialidadeDTO especialidade) {
+		especialidadeService.salvar(especialidade);
 	}
 
 }
