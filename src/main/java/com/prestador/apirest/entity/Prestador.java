@@ -3,7 +3,9 @@ package com.prestador.apirest.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,8 +34,8 @@ public class Prestador implements Serializable {
 	
     @ManyToMany
     @JoinTable(name = "TB_PRESTADOR_ESPECIALIDADE",
-            joinColumns = @JoinColumn(name = "prestador_id"),
-            inverseJoinColumns = @JoinColumn(name = "especialidade_id"))
+            joinColumns = @JoinColumn(name = "id_prestador"),
+            inverseJoinColumns = @JoinColumn(name = "id_especialidade"))
     private List<Especialidade> especialidades;
 
 	public long getId() {
