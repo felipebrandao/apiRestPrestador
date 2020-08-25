@@ -3,6 +3,7 @@ package com.prestador.apirest.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.prestador.apirest.entity.Especialidade;
 
 public class EspecialidadeDTO {
@@ -25,6 +26,9 @@ public class EspecialidadeDTO {
 
 	public void setNome_especialidade(String nome_especialidade) {
 		this.nome_especialidade = nome_especialidade;
+	}
+
+	public EspecialidadeDTO() {
 	}
 	
 	public EspecialidadeDTO(Especialidade especialidade) {
